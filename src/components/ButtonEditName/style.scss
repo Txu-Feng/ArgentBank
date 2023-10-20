@@ -1,0 +1,32 @@
+.modal {
+	position: absolute;
+	padding: 50px;
+	background: #FFFFFF;
+	transform : translate(-50%,-50%);
+	left: 50%;
+	top: 200px;
+	border-radius: 10px;
+}
+  
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgb(0, 0, 0, 0.3);
+}
+
+.modal-content {
+	margin: 100px;
+}
+
+.xmark{
+	position: absolute;
+	cursor: pointer;
+	background-color: #FFFFFF;
+	color:#00bc77;
+	border: none;
+	top: 10px;
+	left: 10px;
+}

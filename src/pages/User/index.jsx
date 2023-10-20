@@ -2,6 +2,7 @@ import Account from '../../components/Account';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from "react";
 import { getUserData } from '../../redux/slices/userSlice';
+import ButtonEditName from '../../components/ButtonEditName';
 
 export default function User() {
     
@@ -28,14 +29,15 @@ export default function User() {
                 console.log(e)
             }
         }
-        fetchDataUser()
-    })
+        fetchDataUser();
+    });
 
     return (
 
         <main className="main bg-dark">
             <div className="header">
                 <h1>Welcome back<br />{userData.firstName + " " + userData.lastName + "!"}</h1>
+                <ButtonEditName />
             </div>
             <div className="header">
             </div>
