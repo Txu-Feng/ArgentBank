@@ -1,6 +1,14 @@
+.edit-button {
+	border-color: #00bc77;
+	background-color: #00bc77;
+	color: #fff;
+	font-weight: bold;
+	padding: 10px;
+}
+
 .modal {
 	position: absolute;
-	padding: 50px;
+	padding: 50px 100px;
 	background: #FFFFFF;
 	transform : translate(-50%,-50%);
 	left: 50%;
@@ -17,9 +25,7 @@
 	background-color: rgb(0, 0, 0, 0.3);
 }
 
-.modal-content {
-	margin: 100px;
-}
+
 
 .xmark{
 	position: absolute;

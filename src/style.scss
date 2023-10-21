@@ -1,6 +1,8 @@
 @import './components/Header/style.scss';
 @import './components/Footer/style.scss';
 @import './pages/Home/style.scss';
+@import './components/Banner/style.scss';
+@import './components/FeatureItem/style.scss';
 @import './pages/SignIn/style.scss';
 @import './components/Account/style.scss';
 @import './pages/User/style.scss';
@@ -43,4 +45,11 @@ body {
  background-color: #12002b;
 min-height: calc(100vh - 143px);
 padding: 1px 0;
+}
+
+.message-error {
+  color: #ce2029;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
 }

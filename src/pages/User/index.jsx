@@ -22,7 +22,6 @@ export default function User() {
                 });
                 if (response.ok) {
                     const data = await response.json();
-                    //console.log(data);
                     dispatch(getUserData({ data }));
                 }
             } catch (e) {

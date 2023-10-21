@@ -11,7 +11,7 @@ export default function Router() {
             <Route index element={<Home />} />
             <Route path='/SignIn' element={<SignIn />} />
             <Route path="/user" element={
-              useSelector(selectAuthToken) ? <User /> : <Navigate to="/sign-in" />
+              useSelector(selectAuthToken) ? <User /> : <Navigate to="/SignIn" />
             }/>
         </Routes>
   );

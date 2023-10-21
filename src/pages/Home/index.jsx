@@ -2,45 +2,32 @@ import React from "react";
 import IconChat from '../../img/icon-chat.webp';
 import IconMoney from '../../img/icon-money.webp';
 import IconSecurity from '../../img/icon-security.webp';
+import FeatureItem from '../../components/FeatureItem';
+import Banner from '../../components/Banner';
+
 
 export default function Home() {
   return (
     <>
         <main>
-            <div className="hero">
-                <section className="hero_content">
-                    <h2 className="sr-only">Promoted Content</h2>
-                    <p className="subtitle">No fees.</p>
-                    <p className="subtitle">No minimum deposit.</p>
-                    <p className="subtitle">High interest rates.</p>
-                    <p className="text">Open a savings account with Argent Bank today!</p>
-                </section>
-            </div>
-            <section className="feature">
+            <Banner />
+            <section className="features">
                 <h2 className="sr-only">Features</h2>
-                <div className="feature_item">
-                    <img src={IconChat} alt="icône chat" className="feature_icon" />
-                    <h3 className="feature_item_title">You are our #1 priority</h3>
-                    <p>
-                        Need to talk to a representative? You can get in touch through our
-                        24/7 chat or through a phone call in less than 5 minutes.
-                    </p>
-                </div>
-                <div className="feature_item">
-                    <img src={IconMoney} alt="icône argent" className="feature_icon" />
-                    <h3 className="feature_item_title">More savings means higher rates</h3>
-                    <p>
-                        The more you save with us, the higher your interest rate will be!
-                    </p>
-                </div>
-                <div className="feature_item">
-                    <img src={IconSecurity} alt="icône sécurité" className="feature_icon" />
-                    <h3 className="feature_item_title">Security you can trust</h3>
-                    <p>
-                        We use top of the line encryption to make sure your data and money
-                        is always safe.
-                    </p>
-                </div>
+                <FeatureItem
+                    image={IconChat}
+                    alt="Chat-Icon"
+                    title="You are our #1 priority"
+                    content="Need to talk to a representative? You can get in touch through our 24/7 chat or through a phone call in less than 5 minutes." />
+                <FeatureItem
+                    image={IconMoney}
+                    alt="Money"
+                    title="More savings means higher rates"
+                    content="The more you save with us, the higher your interest rate will be!" />
+                <FeatureItem
+                    image={IconSecurity}
+                    alt="Security"
+                    title="Security you can trust"
+                    content="We use top of the line encryption to make sure your data and money is always safe." />
             </section>
         </main>
     </>
