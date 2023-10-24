@@ -1,0 +1,130 @@
+swagger: '2.0'
+info:
+  title: Bank Argent API documentation
+  description: Contains all available API endpoints for transactions.
+  version: '1.0.0'
+  termsOfService: 'http://swagger.io/terms/'
+host: localhost:3001
+basePath: /api/v1
+schemes:
+  - http
+paths:
+  /user/account:
+    get:
+      summary: All account
+      description: API for retrieving all user account.
+      security:
+        - Bearer: []
+      responses:
+        '200':
+          description: All accounts retrieved successfully
+        '401':
+          description: Unauthorized user
+        '500':
+          description: Internal Server Error
+  /accounts/{accountID}/transactions:
+    get:
+      summary: All transactions
+      description: API for retrieving a list of all detailed transactions associated with an account for the current month.
+      security:
+        - Bearer: []
+      parameters:
+        - name: accountID
+          in: path
+          description: ID of an account
+          required: true
+          type: string
+      responses:
+        '200':
+          description: All transactions retrieved successfully
+        '401':
+          description: Unauthorized user
+        '404':
+          description: Account not found
+        '500':
+          description: Internal Server Error
+  /transactions/{transactionID}/category:
+    put:
+      summary: Update transaction's category
+      description: API for updating category of a transaction.
+      security:
+        - Bearer: []
+      parameters:
+        - name: transactionID
+          in: path
+          description: ID of the transaction
+          required: true
+          type: integer
+        - name: category
+          in: body
+          description: Modified transaction category
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Transaction's category edited successfully
+        '401':
+          description: Unauthorized user
+        '404':
+          description: Transaction not found
+        '500':
+          description: Internal Server Error
+  /transactions/{transactionID}/note:
+    post:
+      summary: Add transaction's note
+      description: API for adding a note to a transaction.
+      security:
+        - Bearer: []
+      parameters:
+        - name: transactionID
+          in: path
+          description: ID of the transaction
+          required: true
+          type: integer
+        - name: note
+          in: body
+          description: New transaction note
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Note added to the transaction successfully
+        '401':
+          description: Unauthorized user
+        '404':
+          description: Transaction not found
+        '500':
+          description: Internal server error
+  /transactions/{transactionID}/note/{noteID}:
+    delete:
+      summary: Delete transaction's note
+      description: API for deleting a note of a transaction.
+      security:
+        - Bearer: []
+      parameters:
+        - name: transactionID
+          in: path
+          description: ID of the transaction
+          required: true
+          type: integer
+        - name: noteID
+          in: path
+          description: ID of deleted note
+          required: true
+          type: integer
+      responses:
+        200:
+          description: Note deleted successfully
+        401:
+          description: Unauthorized user
+        404:
+          description: Transaction or note not found
+        501:
+          description: Internal server error
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
