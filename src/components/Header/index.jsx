@@ -1,7 +1,8 @@
 import { Link} from 'react-router-dom';
 import ArgentBankLogo from '../../img/argent-bank-logo.webp';
 import { useSelector, useDispatch } from "react-redux";
-import { selectAuthToken, selectUserData } from '../../redux/selectors';
+import { selectAuthToken } from '../../redux/slices/authSlice';
+import { selectUserData } from '../../redux/slices/userSlice';
 import { setSignOut } from '../../redux/slices/authSlice';
 import { resetData } from '../../redux/slices/userSlice';
 
@@ -24,7 +25,7 @@ export default function Header() {
       <div>
         {token ? (
           <>
-            <Link className="main-nav-item" to="/user">
+            <Link className="main-nav_item" to="/Profile">
               <i className='fa fa-user-circle'></i> {userData.userName}
             </Link>
             <Link to='./' className='main-nav_item'
@@ -33,7 +34,7 @@ export default function Header() {
             </Link>
           </>
         ) : (
-          <Link to='./SignIn' className='main-nav_item'>
+          <Link to='./Login' className='main-nav_item'>
             <i className='fa fa-user-circle'></i> Sign In
           </Link>
         )}

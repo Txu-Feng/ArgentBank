@@ -2,7 +2,7 @@ import { useState } from "react";
 import ReactModal from "react-modal";
 import Field from '../Field';
 import { useDispatch, useSelector } from "react-redux";
-import { selectAuthToken } from "../../redux/selectors";
+import { selectAuthToken } from "../../redux/slices/authSlice";
 import { editUserName } from "../../redux/slices/userSlice";
 
 
@@ -33,9 +33,10 @@ export default function ButtonEditName () {
                 throw new Error("Échec de la mise à jour du nom d'utilisateur")
             }
             dispatch(editUserName(userName));
+			setError("");
             setShowModal(false);
-        } catch (err) {
-            console.log(err);
+        } catch (e) {
+            console.log(e);
 			alert("An error has occurred. Please try again later.");
         }
 	}
@@ -53,8 +54,8 @@ export default function ButtonEditName () {
 				</button>
 				<form onSubmit={submitFormEditName}>
 					<Field labelAndID="username" name="username" innerText="Enter a new username"/>
-					{error && <span className="message-error">{error}</span>}
-					<button className="edit-button" type="submit">Save</button>
+					{error && <span className="message-error">{error}</span>}{<br />}
+					<button className="edit-button " type="submit">Save</button>
 				</form>
 			</ReactModal>
 		</>

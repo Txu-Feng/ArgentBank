@@ -3,10 +3,11 @@
 @import './pages/Home/style.scss';
 @import './components/Banner/style.scss';
 @import './components/FeatureItem/style.scss';
-@import './pages/SignIn/style.scss';
+@import './pages/Login/style.scss';
 @import './components/Account/style.scss';
-@import './pages/User/style.scss';
+@import './pages/Profile/style.scss';
 @import './components/ButtonEditName/style.scss';
+@import './pages/Error/style.scss';
 
 html {
     font-family: Avenir, Helvetica, Arial, sans-serif;

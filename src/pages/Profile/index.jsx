@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { getUserData } from '../../redux/slices/userSlice';
 import ButtonEditName from '../../components/ButtonEditName';
 
-export default function User() {
+export default function Profile() {
     
     const token = useSelector(state => state.auth.token);
     const userData = useSelector((state) => state.user)

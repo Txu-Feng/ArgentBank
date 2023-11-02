@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setSignIn } from "../../redux/slices/authSlice";
 
-export default function SignIn() {
+export default function Login() {
 
     // let localStorageEmail = localStorage.email ? localStorage.email : "";
     const [error, setError] = useState("");
@@ -32,7 +32,7 @@ export default function SignIn() {
           //   localStorage.setItem("email", email);
           //   localStorageEmail = email;
           // }
-          navigate("/user");
+          navigate("/Profile");
         } else if (response.status === 400) {
           setError("Error in username or password");
         } else {

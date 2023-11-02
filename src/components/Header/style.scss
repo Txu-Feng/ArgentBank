@@ -11,9 +11,11 @@
         }
     }
     &_item {
+        display: inline-block;
         text-decoration: none;
         margin-right: 0.5rem;
         margin-left: 1.5em;
+        margin-bottom: 0.2em;
         &:hover {
             text-decoration: underline;
         }
